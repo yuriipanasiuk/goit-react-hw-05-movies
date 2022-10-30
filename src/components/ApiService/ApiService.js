@@ -23,13 +23,15 @@ export async function searchMovies(query) {
 }
 
 export async function getMovieDetails(id) {
-  const { data } = await axios('/movie/id', {
-    params: { api_key: API_KEY },
+  const { data } = await axios(`/movie/${id}`, {
+    params: {
+      api_key: API_KEY,
+    },
   });
 
-  return data.results;
+  return data;
 }
-
+// getMovieDetails();
 // export function GetMovieCredits() {}
 
 // export function GetMovieReviews() {}

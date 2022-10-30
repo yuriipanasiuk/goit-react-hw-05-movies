@@ -1,16 +1,16 @@
 import Box from 'components/Box';
 import { Outlet } from 'react-router-dom';
-import { StyledLink, Header } from './SharedLayout.styled';
+import { StyledLink, Header, Nav } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   return (
     <Box>
       <Header>
-        <Box width={'1200px'} pl={4} pr={4}>
-          <nav>
+        <Box width={'1280px'} ml="auto" mr="auto">
+          <Nav>
             <StyledLink to="/">Home</StyledLink>
             <StyledLink to="/movies">Movies</StyledLink>
-          </nav>
+          </Nav>
         </Box>
       </Header>
       <Outlet />
