@@ -16,6 +16,10 @@ export const Owerview = styled.p`
   margin-bottom: 12px;
 `;
 
+export const OwerviewTetx = styled.p`
+  text-align: justify;
+`;
+
 export const Genre = styled.p`
   font-size: 18px;
   font-weight: 700;

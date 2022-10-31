@@ -24,6 +24,7 @@ export const theme = {
   },
   shadows: {
     shadow: '0px 0px 5px 0px rgba(0, 0, 0, 0.75)',
+    header: '0px 2px 14px -4px rgba(0, 0, 0, 0.75)',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   radii: {

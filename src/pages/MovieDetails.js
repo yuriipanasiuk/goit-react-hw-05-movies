@@ -4,6 +4,14 @@ import { getMovieDetails } from 'components/ApiService/ApiService';
 import { useEffect, useState } from 'react';
 import MovieCard from 'components/MovieCard';
 
+const navItem = [
+  {
+    href: 'cast',
+    text: 'Cast',
+  },
+  { href: 'reviews', text: 'Reviews' },
+];
+
 export const MovieDetails = () => {
   const [movieDetails, setMoviDetails] = useState({});
   const { movieId } = useParams();
@@ -21,13 +29,15 @@ export const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    <Box>
+    <Box width={1200} ml="auto" mr="auto">
       <MovieCard items={movieDetails} />
 
       <p>Adition information</p>
-
-      <NavLink to="cast">cast</NavLink>
-      <NavLink to="reviews">reviews</NavLink>
+      {navItem.map(({ href, text }) => (
+        <NavLink key={href} to={href}>
+          {text}
+        </NavLink>
+      ))}
       <Outlet />
     </Box>
   );

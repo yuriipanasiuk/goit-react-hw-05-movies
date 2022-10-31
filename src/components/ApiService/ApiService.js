@@ -31,7 +31,23 @@ export async function getMovieDetails(id) {
 
   return data;
 }
-// getMovieDetails();
-// export function GetMovieCredits() {}
 
-// export function GetMovieReviews() {}
+export async function getMovieCredits(id) {
+  const { data } = await axios(`/movie/${id}/credits`, {
+    params: {
+      api_key: API_KEY,
+    },
+  });
+
+  return data;
+}
+
+export async function getMovieReviews(id) {
+  const { data } = await axios(`/movie/${id}/reviews`, {
+    params: {
+      api_key: API_KEY,
+    },
+  });
+
+  return data.results;
+}

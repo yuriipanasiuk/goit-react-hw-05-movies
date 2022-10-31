@@ -20,7 +20,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <Box as="main" ml="auto" mr="auto" width={1280}>
+    <Box as="main" ml="auto" mr="auto" width={1280} mb={4} mt={4}>
       <TrendingMovies items={trendMovies} />
     </Box>
   );
