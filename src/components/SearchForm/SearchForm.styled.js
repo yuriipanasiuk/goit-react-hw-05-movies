@@ -14,6 +14,7 @@ export const Input = styled.input`
   margin-right: 8px;
   border-radius: 5px;
   border-width: 1px;
+  margin-bottom: 12px;
 `;
 
 export const Button = styled.button`

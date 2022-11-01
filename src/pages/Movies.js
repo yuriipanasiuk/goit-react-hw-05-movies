@@ -1,10 +1,10 @@
 import Box from 'components/Box';
 import SearchForm from 'components/SearchForm';
 import { useEffect, useState } from 'react';
-import { searchMovies } from 'components/ApiService/ApiService';
+import { searchMovies } from 'ApiService/ApiService';
 import SearchMovie from 'components/SearchMovie';
 
-export function Movies() {
+export default function Movies() {
   const [query, setQuery] = useState('');
   const [searchMovieItems, setSearchMovieItems] = useState([]);
 
@@ -34,7 +34,7 @@ export function Movies() {
   }, [query]);
 
   return (
-    <Box as="main" pl={4}>
+    <Box as="main" width={1280} ml="auto" mr="auto" mt={4}>
       <SearchForm onSubmit={getQuery} />
       <SearchMovie items={searchMovieItems} />
     </Box>

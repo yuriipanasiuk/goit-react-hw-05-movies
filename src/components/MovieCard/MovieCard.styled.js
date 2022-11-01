@@ -26,3 +26,7 @@ export const Genre = styled.p`
   margin-bottom: 12px;
   margin-top: 12px;
 `;
+
+export const ImageWraper = styled.div`
+  margin-right: ${p => p.theme.space[4]}px;
+`;

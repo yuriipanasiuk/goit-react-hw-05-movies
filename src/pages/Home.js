@@ -1,9 +1,9 @@
 import Box from 'components/Box';
-import { getTrending } from 'components/ApiService/ApiService';
+import { getTrending } from 'ApiService/ApiService';
 import { useEffect, useState } from 'react';
 import TrendingMovies from 'components/TrendingMovies';
 
-export const Home = () => {
+const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
 
   useEffect(() => {
@@ -25,3 +25,5 @@ export const Home = () => {
     </Box>
   );
 };
+
+export default Home;

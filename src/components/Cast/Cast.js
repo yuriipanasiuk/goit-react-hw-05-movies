@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getMovieCredits } from 'components/ApiService/ApiService';
+import { getMovieCredits } from 'ApiService/ApiService';
 import { CastList, CastListItem, CastName } from './Cast.styled';
 import Box from 'components/Box';
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/w200';
 
-export const Cast = () => {
+const Cast = () => {
   const [actors, setActors] = useState([]);
   const { movieId } = useParams();
 

@@ -1,1 +1,1 @@
-export { defoult } from './Cast';
+export { default } from './Cast';

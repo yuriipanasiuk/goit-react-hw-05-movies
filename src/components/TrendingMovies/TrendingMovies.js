@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { List, Title, Item, MovieTitle } from './TrendingMovies.styled';
-import Box from 'components/Box';
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/w300';
 
@@ -17,9 +16,7 @@ const TrendingMovies = ({ items }) => {
                 alt={movie.title}
               />
             </Link>
-            <Box>
-              <MovieTitle>{movie.original_title}</MovieTitle>
-            </Box>
+            <MovieTitle>{movie.original_title}</MovieTitle>
           </Item>
         ))}
       </List>

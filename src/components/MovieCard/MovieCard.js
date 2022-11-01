@@ -6,6 +6,7 @@ import {
   Owerview,
   Genre,
   OwerviewTetx,
+  ImageWraper,
 } from './MovieCard.styled';
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/w400';
@@ -33,11 +34,11 @@ const MovieCard = ({ items }) => {
 
   return (
     <Box display="flex" mt={5}>
-      <Box mr={5}>
+      <ImageWraper mr={5}>
         {poster_path && (
           <img src={`${baseImageUrl}${poster_path}`} alt={title} />
         )}
-      </Box>
+      </ImageWraper>
       <Box width={900}>
         {release_date && (
           <MovieTitle>

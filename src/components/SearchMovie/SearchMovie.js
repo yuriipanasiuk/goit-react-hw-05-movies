@@ -1,11 +1,15 @@
+import { List, Link } from './SearchMovie.styled';
+
 const SearchMovie = ({ items }) => {
   return (
     <>
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>{item.original_title}</li>
+      <List>
+        {items.map(({ id, original_title }) => (
+          <li key={id}>
+            <Link to={`${id}`}>{original_title}</Link>
+          </li>
         ))}
-      </ul>
+      </List>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import Box from 'components/Box';
-import { StyledLink } from './Header.styled';
+import { StyledLink, Layout } from './Header.styled';
 
 const navItems = [
   { href: 'home', text: 'Home' },
@@ -8,22 +8,15 @@ const navItems = [
 
 const Header = () => {
   return (
-    <Box
-      as="header"
-      display="flex"
-      align-items="center"
-      pt={4}
-      pb={4}
-      boxShadow="header"
-    >
-      <Box as="nav" width={1200} ml="auto" mr="auto">
+    <Layout>
+      <Box as="nav" width={1280} ml="auto" mr="auto">
         {navItems.map(({ href, text }) => (
           <StyledLink key={href} to={href}>
             {text}
           </StyledLink>
         ))}
       </Box>
-    </Box>
+    </Layout>
   );
 };
 

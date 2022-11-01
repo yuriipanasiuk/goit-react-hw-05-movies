@@ -15,10 +15,14 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 
-export const Layout = styled.header`
-  display: flex;
-  align-items: 'center';
-  padding-top: ${p => p.theme.space[4]}px;
-  padding-bottom: ${p => p.theme.space[4]}px;
-  box-shadow: ${p => p.theme.shadows.header};
+export const Layout = styled.div`
+  margin-top: 12px;
+  text-align: center;
+`;
+
+export const AditionText = styled.p`
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
 `;
