@@ -2,7 +2,7 @@ import Box from 'components/Box';
 import { Suspense } from 'react';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { getMovieDetails } from 'ApiService/ApiService';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import MovieCard from 'components/MovieCard';
 import {
   StyledLink,
@@ -37,9 +37,9 @@ const MovieDetails = () => {
     getDetails();
   }, [movieId]);
 
-  const backLink = location.state?.from ?? '/movies';
-  const test = useRef();
-  console.log(test);
+  // const searchRow = useRef(location.state?.from.search);
+  // const backLink = location.state?.from ?? `/movies${searchRow.current}`;
+  const backLink = location.state?.from ?? `/movies`;
 
   return (
     <Box width={1280} ml="auto" mr="auto">
@@ -47,12 +47,13 @@ const MovieDetails = () => {
         <BackIcon />
         <p>go Back</p>
       </Link>
+
       <MovieCard items={movieDetails} />
 
       <Layout>
         <AditionText>Adition information</AditionText>
         {navItem.map(({ href, text }) => (
-          <StyledLink key={href} to={href}>
+          <StyledLink key={href} to={href} state={{ from: backLink }}>
             {text}
           </StyledLink>
         ))}

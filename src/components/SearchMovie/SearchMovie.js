@@ -3,6 +3,11 @@ import { List, Link } from './SearchMovie.styled';
 
 const SearchMovie = ({ items }) => {
   const location = useLocation();
+
+  if (items.length === 0) {
+    return;
+  }
+
   return (
     <>
       <List>
