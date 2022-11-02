@@ -3,25 +3,25 @@ import SearchForm from 'components/SearchForm';
 import { useEffect, useState } from 'react';
 import { searchMovies } from 'ApiService/ApiService';
 import SearchMovie from 'components/SearchMovie';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Movies() {
-  const [query, setQuery] = useState('');
   const [searchMovieItems, setSearchMovieItems] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const searchQuery = searchParams.get('value');
 
   const getQuery = data => {
-    if (data === '') {
-      return;
-    }
-    setQuery(data);
+    setSearchParams(data !== '' ? { value: data } : {});
   };
 
   useEffect(() => {
-    if (query === '') {
+    if (!searchQuery) {
       return;
     }
     async function getSearchMovie() {
       try {
-        const movies = await searchMovies(query);
+        const movies = await searchMovies(searchQuery);
 
         if (movies.length > 0) {
           setSearchMovieItems(movies);
@@ -31,7 +31,7 @@ export default function Movies() {
       }
     }
     getSearchMovie();
-  }, [query]);
+  }, [searchQuery]);
 
   return (
     <Box as="main" width={1280} ml="auto" mr="auto" mt={4}>

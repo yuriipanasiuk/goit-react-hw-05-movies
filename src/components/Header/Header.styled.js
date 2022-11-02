@@ -21,4 +21,5 @@ export const Layout = styled.header`
   padding-top: ${p => p.theme.space[4]}px;
   padding-bottom: ${p => p.theme.space[4]}px;
   box-shadow: ${p => p.theme.shadows.header};
+  margin-bottom: 12px;
 `;
