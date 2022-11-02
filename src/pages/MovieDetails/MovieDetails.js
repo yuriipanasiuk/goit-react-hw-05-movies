@@ -2,7 +2,7 @@ import Box from 'components/Box';
 import { Suspense } from 'react';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { getMovieDetails } from 'ApiService/ApiService';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import MovieCard from 'components/MovieCard';
 import {
   StyledLink,
@@ -38,6 +38,8 @@ const MovieDetails = () => {
   }, [movieId]);
 
   const backLink = location.state?.from ?? '/movies';
+  const test = useRef();
+  console.log(test);
 
   return (
     <Box width={1280} ml="auto" mr="auto">
