@@ -37,8 +37,6 @@ const MovieDetails = () => {
     getDetails();
   }, [movieId]);
 
-  // const searchRow = useRef(location.state?.from.search);
-  // const backLink = location.state?.from ?? `/movies${searchRow.current}`;
   const backLink = location.state?.from ?? `/movies`;
 
   return (

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Box from 'components/Box';
 import { useEffect, useState } from 'react';
 import {
@@ -53,6 +54,18 @@ const MovieCard = ({ items }) => {
       </Box>
     </Box>
   );
+};
+
+MovieCard.propTypes = {
+  items: PropTypes.shape({
+    poster_path: PropTypes.string,
+    original_title: PropTypes.string,
+    release_date: PropTypes.string,
+    title: PropTypes.string,
+    popularity: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.array,
+  }),
 };
 
 export default MovieCard;

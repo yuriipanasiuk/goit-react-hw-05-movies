@@ -3,32 +3,38 @@ import { NavLink, Link as BackLink } from 'react-router-dom';
 import { HiArrowLeft } from 'react-icons/hi';
 
 export const BackIcon = styled(HiArrowLeft)`
-  margin-right: 8px;
+  margin-right: ${p => p.theme.space[3]}px;
 `;
 
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: black;
-  font-size: 24px;
+  font-size: ${p => p.theme.fontSizes.xl};
 
   &.active {
-    color: orange;
+    color: ${p => p.theme.colors.hover};
     text-decoration: underline;
   }
+
+  :not(.active) {
+    :hover {
+      color: ${p => p.theme.colors.textColor};
+    }
+  }
   :not(:last-child) {
-    margin-right: 20px;
+    margin-right: ${p => p.theme.space[4]}px;
   }
 `;
 
 export const Layout = styled.div`
-  margin-top: 12px;
+  margin-top: ${p => p.theme.space[3]}px;
   text-align: center;
 `;
 
 export const AditionText = styled.p`
-  margin-bottom: 12px;
-  font-size: 18px;
-  font-weight: 700;
+  margin-bottom: ${p => p.theme.space[3]}px;
+  font-size: ${p => p.theme.fontSizes.l};
+  font-weight: ${p => p.theme.fontWeight.bold};
   text-transform: uppercase;
 `;
 
@@ -36,9 +42,9 @@ export const Link = styled(BackLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: ${p => p.theme.colors.black};
 
   :hover {
-    color: orange;
+    color: ${p => p.theme.colors.hover};
   }
 `;

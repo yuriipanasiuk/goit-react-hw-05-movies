@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
 export const MovieTitle = styled.h2`
-  font-size: 24px;
-  margin-bottom: 12px;
+  font-size: ${p => p.theme.fontSizes.xl};
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
 
 export const Popularity = styled.p`
-  font-size: 18px;
-  margin-bottom: 12px;
+  font-size: ${p => p.theme.fontSizes.l};
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
 
 export const Owerview = styled.p`
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-size: ${p => p.theme.fontSizes.l};
+  font-weight: ${p => p.theme.fontWeight.bold};
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
 
 export const OwerviewTetx = styled.p`
@@ -21,10 +21,10 @@ export const OwerviewTetx = styled.p`
 `;
 
 export const Genre = styled.p`
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  margin-top: 12px;
+  font-size: ${p => p.theme.fontSizes.l};
+  font-weight: ${p => p.theme.fontWeight.bold};
+  margin-bottom: ${p => p.theme.space[3]}px;
+  margin-top: ${p => p.theme.space[3]}px;
 `;
 
 export const ImageWraper = styled.div`

@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { List, Title, Item, MovieTitle } from './TrendingMovies.styled';
+import PropTypes from 'prop-types';
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/w300';
 
@@ -22,4 +23,9 @@ const TrendingMovies = ({ items }) => {
     </>
   );
 };
+
+TrendingMovies.propTypes = {
+  items: PropTypes.array.isRequired,
+};
+
 export default TrendingMovies;

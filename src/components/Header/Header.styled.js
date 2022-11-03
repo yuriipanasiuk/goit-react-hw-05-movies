@@ -3,15 +3,21 @@ import { NavLink } from 'react-router-dom';
 
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
-  color: black;
-  font-size: 24px;
+  color: ${p => p.theme.colors.black};
+  font-size: ${p => p.theme.fontSizes.xl};
 
   &.active {
     color: orange;
     text-decoration: underline;
   }
+
+  :not(.active) {
+    :hover {
+      color: ${p => p.theme.colors.textColor};
+    }
+  }
   :not(:last-child) {
-    margin-right: 20px;
+    margin-right: ${p => p.theme.space[4]}px;
   }
 `;
 
@@ -21,5 +27,6 @@ export const Layout = styled.header`
   padding-top: ${p => p.theme.space[4]}px;
   padding-bottom: ${p => p.theme.space[4]}px;
   box-shadow: ${p => p.theme.shadows.header};
-  margin-bottom: 12px;
+  margin-bottom: ${p => p.theme.space[4]}px;
+  background-color: ${p => p.theme.colors.white};
 `;

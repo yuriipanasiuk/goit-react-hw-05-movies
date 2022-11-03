@@ -6,27 +6,29 @@ export const Form = styled.form`
 
 export const Input = styled.input`
   width: 300px;
-  padding-left: 8px;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  padding-right: 4px;
-  font-size: 18px;
-  margin-right: 8px;
-  border-radius: 5px;
+  padding-left: ${p => p.theme.space[3]}px;
+  padding-bottom: ${p => p.theme.space[2]}px;
+  padding-top: ${p => p.theme.space[2]}px;
+  padding-right: ${p => p.theme.space[2]}px;
+  font-size: ${p => p.theme.fontSizes.l};
+  margin-right: ${p => p.theme.space[3]}px;
+  border-radius: ${p => p.theme.radii.normal};
   border-width: 1px;
-  margin-bottom: 12px;
 `;
 
 export const Button = styled.button`
   width: 80px;
-  font-size: 16px;
-  padding: 4px;
+  font-size: ${p => p.theme.fontSizes.m};
+  padding: ${p => p.theme.space[2]}px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: ${p => p.theme.radii.normal};
   border: none;
+  border-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
 
   :hover {
-    background-color: orange;
-    color: white;
+    background-color: ${p => p.theme.colors.hover};
+    color: ${p => p.theme.colors.white};
   }
 `;

@@ -5,11 +5,11 @@ export const List = styled.ul`
 `;
 
 export const AuthorName = styled.p`
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-weight: ${p => p.theme.fontWeight.bold};
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
 
 export const ContentTetx = styled.p`
   text-align: justify;
-  margin-bottom: 8px;
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;

@@ -8,13 +8,14 @@ export const List = styled.ul`
 `;
 
 export const Title = styled.h1`
-  margin-bottom: 12px;
+  margin-bottom: ${p => p.theme.space[4]}px;
   text-align: center;
+  text-transform: uppercase;
 `;
 
 export const Item = styled.li`
   box-shadow: 10px 9px 14px -6px rgba(0, 0, 0, 0.75);
-  border-radius: 5px;
+  border-radius: ${p => p.theme.radii.normal};
   transition: box-shadow, scale 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &:hover,
@@ -25,8 +26,8 @@ export const Item = styled.li`
 `;
 
 export const MovieTitle = styled.p`
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: ${p => p.theme.space[4]}px;
+  margin-bottom: ${p => p.theme.space[4]}px;
   text-align: center;
   text-transform: uppercase;
 `;

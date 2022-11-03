@@ -4,7 +4,7 @@ export const CastList = styled.ul`
   display: grid;
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
+  gap: ${p => p.theme.space[4]}px;
   margin: 12px auto 16px;
   padding: 0px;
   list-style: none;
@@ -15,6 +15,6 @@ export const CastListItem = styled.li`
 `;
 
 export const CastName = styled.p`
-  margin-top: 8px;
+  margin-top: ${p => p.theme.space[3]}px;
   text-align: center;
 `;
