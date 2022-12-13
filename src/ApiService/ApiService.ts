@@ -11,7 +11,7 @@ export async function getTrending() {
   return data.results;
 }
 
-export async function searchMovies(query) {
+export async function searchMovies(query: string) {
   const { data } = await axios('/search/movie', {
     params: {
       api_key: API_KEY,
@@ -22,7 +22,7 @@ export async function searchMovies(query) {
   return data.results;
 }
 
-export async function getMovieDetails(id) {
+export async function getMovieDetails(id: string) {
   const { data } = await axios(`/movie/${id}`, {
     params: {
       api_key: API_KEY,
@@ -32,7 +32,7 @@ export async function getMovieDetails(id) {
   return data;
 }
 
-export async function getMovieCredits(id) {
+export async function getMovieCredits(id: string) {
   const { data } = await axios(`/movie/${id}/credits`, {
     params: {
       api_key: API_KEY,
@@ -42,7 +42,7 @@ export async function getMovieCredits(id) {
   return data;
 }
 
-export async function getMovieReviews(id) {
+export async function getMovieReviews(id: string) {
   const { data } = await axios(`/movie/${id}/reviews`, {
     params: {
       api_key: API_KEY,

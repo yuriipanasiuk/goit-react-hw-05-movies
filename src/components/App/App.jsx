@@ -1,18 +1,17 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy } from 'react';
-import { SharedLayout } from 'components/SharedLayout/SharedLayout';
-import Box from 'components/Box';
-import Home from 'pages/Home';
+import { SharedLayout } from '../../components/SharedLayout/SharedLayout';
+import Home from '../../pages/Home';
 
-const MovieDetails = lazy(() => import('pages/MovieDetails'));
-const Cast = lazy(() => import('components/Cast'));
-const Reviews = lazy(() => import('components/Reviews'));
-const Movies = lazy(() => import('pages/Movies'));
-const NotFound = lazy(() => import('pages/NotFound'));
+const MovieDetails = lazy(() => import('../../pages/MovieDetails'));
+const Cast = lazy(() => import('../Cast'));
+const Reviews = lazy(() => import('../Reviews'));
+const Movies = lazy(() => import('../../pages/Movies'));
+const NotFound = lazy(() => import('../../pages/NotFound'));
 
 export const App = () => {
   return (
-    <Box>
+    <div>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Navigate to="home" />} />
@@ -25,6 +24,6 @@ export const App = () => {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Box>
+    </div>
   );
 };

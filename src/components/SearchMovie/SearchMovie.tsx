@@ -1,8 +1,14 @@
 import { useLocation } from 'react-router-dom';
 import { List, Link, ListItem } from './SearchMovie.styled';
-import PropTypes from 'prop-types';
 
-const SearchMovie = ({ items }) => {
+interface IProps {
+  items: {
+    id: number;
+    original_title: string;
+  }[];
+}
+
+const SearchMovie = ({ items }: IProps) => {
   const location = useLocation();
 
   if (items.length === 0) {
@@ -22,10 +28,6 @@ const SearchMovie = ({ items }) => {
       </List>
     </>
   );
-};
-
-SearchMovie.propTypes = {
-  items: PropTypes.array.isRequired,
 };
 
 export default SearchMovie;

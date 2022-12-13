@@ -1,15 +1,21 @@
-import Box from 'components/Box';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieReviews } from 'ApiService/ApiService';
+import Box from '../Box';
+import { getMovieReviews } from '../../ApiService/ApiService';
 import { List, AuthorName, ContentTetx } from './Reviews.styled';
 
+interface IState {
+  id: string;
+  author: string;
+  content: string;
+}
+
 const Reviews = () => {
-  const [movieReviews, setMovieReviews] = useState([]);
-  const { movieId } = useParams();
+  const [movieReviews, setMovieReviews] = useState<IState[]>([]);
+  const { movieId } = useParams() as any;
 
   useEffect(() => {
-    async function getReviews(id) {
+    async function getReviews(id: string) {
       const reviews = await getMovieReviews(id);
 
       setMovieReviews(reviews);
@@ -17,6 +23,8 @@ const Reviews = () => {
 
     getReviews(movieId);
   }, [movieId]);
+
+  console.log(movieId);
 
   return (
     <Box>

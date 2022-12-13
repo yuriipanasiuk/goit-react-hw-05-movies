@@ -1,18 +1,17 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getMovieCredits } from 'ApiService/ApiService';
+import { getMovieCredits } from '../../ApiService/ApiService';
 import { CastList, CastListItem, CastName } from './Cast.styled';
-import Box from 'components/Box';
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/w200';
 
 const Cast = () => {
   const [actors, setActors] = useState([]);
-  const { movieId } = useParams();
+  const { movieId } = useParams() as any;
 
   useEffect(() => {
     const controller = new AbortController();
-    async function getActors(id) {
+    async function getActors(id: string) {
       try {
         const actorItems = await getMovieCredits(id);
         setActors(actorItems.cast);
@@ -26,7 +25,7 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <Box>
+    <div>
       <CastList>
         {actors.map(({ id, name, profile_path }) => (
           <CastListItem key={id}>
@@ -41,7 +40,7 @@ const Cast = () => {
           </CastListItem>
         ))}
       </CastList>
-    </Box>
+    </div>
   );
 };
 

@@ -1,9 +1,8 @@
-import Box from 'components/Box';
-import { Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
-import { getMovieDetails } from 'ApiService/ApiService';
-import { useEffect, useState } from 'react';
-import MovieCard from 'components/MovieCard';
+import Box from '../../components/Box';
+import { getMovieDetails } from '../../ApiService/ApiService';
+import MovieCard from '../../components/MovieCard';
 import {
   StyledLink,
   Layout,

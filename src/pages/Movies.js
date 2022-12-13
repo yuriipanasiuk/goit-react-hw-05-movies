@@ -1,9 +1,9 @@
-import Box from 'components/Box';
-import SearchForm from 'components/SearchForm';
 import { useEffect, useState } from 'react';
-import { searchMovies } from 'ApiService/ApiService';
-import SearchMovie from 'components/SearchMovie';
 import { useSearchParams } from 'react-router-dom';
+import Box from '../components/Box';
+import SearchForm from '../components/SearchForm';
+import { searchMovies } from '../ApiService/ApiService';
+import SearchMovie from '../components/SearchMovie';
 
 export default function Movies() {
   const [searchMovieItems, setSearchMovieItems] = useState([]);

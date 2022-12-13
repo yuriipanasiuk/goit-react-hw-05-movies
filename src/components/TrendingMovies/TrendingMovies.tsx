@@ -1,10 +1,18 @@
 import { Link, useLocation } from 'react-router-dom';
 import { List, Title, Item, MovieTitle } from './TrendingMovies.styled';
-import PropTypes from 'prop-types';
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/w300';
 
-const TrendingMovies = ({ items }) => {
+interface IProps {
+  items: {
+    id: number;
+    poster_path: string;
+    title: string;
+    original_title: string;
+  }[];
+}
+
+const TrendingMovies = ({ items }: IProps) => {
   const location = useLocation();
 
   return (
@@ -22,10 +30,6 @@ const TrendingMovies = ({ items }) => {
       </List>
     </>
   );
-};
-
-TrendingMovies.propTypes = {
-  items: PropTypes.array.isRequired,
 };
 
 export default TrendingMovies;

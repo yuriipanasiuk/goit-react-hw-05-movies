@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
-import Box from 'components/Box';
 import { useEffect, useState } from 'react';
+import Box from '../Box';
 import {
   MovieTitle,
   Popularity,
@@ -12,8 +11,20 @@ import {
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/w400';
 
-const MovieCard = ({ items }) => {
-  const [genreMovie, setGenre] = useState();
+interface IProps {
+  items: {
+    poster_path: string;
+    original_title: string;
+    release_date: string;
+    title: string;
+    popularity: string;
+    overview: string;
+    genres: { id: number; name: string }[];
+  };
+}
+
+const MovieCard = ({ items }: IProps) => {
+  const [genreMovie, setGenre] = useState<string[]>();
   const {
     poster_path,
     original_title,
@@ -35,7 +46,7 @@ const MovieCard = ({ items }) => {
 
   return (
     <Box display="flex" mt={5}>
-      <ImageWraper mr={5}>
+      <ImageWraper>
         {poster_path && (
           <img src={`${baseImageUrl}${poster_path}`} alt={title} />
         )}
@@ -54,18 +65,6 @@ const MovieCard = ({ items }) => {
       </Box>
     </Box>
   );
-};
-
-MovieCard.propTypes = {
-  items: PropTypes.shape({
-    poster_path: PropTypes.string,
-    original_title: PropTypes.string,
-    release_date: PropTypes.string,
-    title: PropTypes.string,
-    popularity: PropTypes.number,
-    overview: PropTypes.string,
-    genres: PropTypes.array,
-  }),
 };
 
 export default MovieCard;

@@ -1,7 +1,7 @@
-import Box from 'components/Box';
-import { getTrending } from 'ApiService/ApiService';
 import { useEffect, useState } from 'react';
-import TrendingMovies from 'components/TrendingMovies';
+import Box from '../components/Box';
+import { getTrending } from '../ApiService/ApiService';
+import TrendingMovies from '../components/TrendingMovies';
 
 const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
